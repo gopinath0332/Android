@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         values.put(StudentProvider.GRADE, department);
 
 //        update uri
+//        TODO: update Uri mapping student provider.
 //        Uri uri = getContentResolver().insert(StudentProvider.CONTENT_URI, values);
 //        Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_SHORT).show();
     }
