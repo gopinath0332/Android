@@ -5,4 +5,5 @@
     <string name="btn_start">Start service</string>
     <string name="btn_stop">Stop service</string>
     <string name="btn_broadcast">Broadcast Message</string>
+    <string name="name">Name</string>
 </resources>

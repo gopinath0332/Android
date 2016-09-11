@@ -53,4 +53,13 @@
         android:layout_below="@+id/stopBtn"
         android:onClick="broadcastIntent"
         android:layout_centerHorizontal="true" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:layout_below="@id/broadcast"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/name"
+        />
+
 </RelativeLayout>
