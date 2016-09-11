@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="msg_name">HelloWorld</string>
+    <string name="service_name">Services Example</string>
+    <string name="btn_start">Start service</string>
+    <string name="btn_stop">Stop service</string>
+    <string name="btn_broadcast">Broadcast Message</string>
+</resources>
