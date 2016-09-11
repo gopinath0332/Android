@@ -5,5 +5,7 @@
     <string name="btn_start">Start service</string>
     <string name="btn_stop">Stop service</string>
     <string name="btn_broadcast">Broadcast Message</string>
-    <string name="name">Name</string>
+    <string name="std_name">Student Name</string>
+    <string name="add_btn">Add Name</string>
+    <string name="std_dept">Student department</string>
 </resources>

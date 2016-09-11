@@ -19,47 +19,61 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#3b7103"
-        android:textSize="30sp"
         android:layout_below="@id/textView1"
         android:layout_centerHorizontal="true"
-        android:text="@string/service_name" />
+        android:text="@string/service_name"
+        android:textColor="#3b7103"
+        android:textSize="30sp" />
 
     <Button
+        android:id="@+id/startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/startBtn"
-        android:text="@string/btn_start"
         android:layout_below="@id/textView2"
         android:layout_centerHorizontal="true"
         android:onClick="startService"
-        />
+        android:text="@string/btn_start" />
 
     <Button
+        android:id="@+id/stopBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/stopBtn"
-        android:text="@string/btn_stop"
         android:layout_below="@id/startBtn"
         android:layout_centerHorizontal="true"
         android:onClick="stopService"
-        />
+        android:text="@string/btn_stop" />
+
+    <Button
+        android:id="@+id/broadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stopBtn"
+        android:layout_centerHorizontal="true"
+        android:onClick="broadcastIntent"
+        android:text="@string/btn_broadcast" />
+
+    <EditText
+        android:id="@+id/std_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/broadcast"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/std_name" />
+
+    <EditText
+        android:id="@+id/std_dept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/std_name"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/std_dept" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_broadcast"
-        android:id="@+id/broadcast"
-        android:layout_below="@+id/stopBtn"
-        android:onClick="broadcastIntent"
-        android:layout_centerHorizontal="true" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/name"
-        android:layout_below="@id/broadcast"
+        android:layout_below="@id/std_dept"
         android:layout_centerHorizontal="true"
-        android:hint="@string/name"
-        />
+        android:onClick="addName"
+        android:text="@string/add_btn" />
 
 </RelativeLayout>
