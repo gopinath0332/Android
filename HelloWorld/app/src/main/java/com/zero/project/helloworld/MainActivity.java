@@ -3,6 +3,7 @@
  */
 package com.zero.project.helloworld;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.zero.project.helloworld.provider.StudentProvider;
 import com.zero.project.helloworld.service.MyService;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,8 +43,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addName(View view) {
-        EditText editText = (EditText)findViewById(R.id.std_name);
-        Log.d(TAG, "addName: "+editText.getText());
+        EditText nameBox = (EditText) findViewById(R.id.std_name);
+        EditText departmentBox = (EditText) findViewById(R.id.std_dept);
+
+        String name = nameBox.getText().toString();
+        String department = departmentBox.getText().toString();
+        Log.d(TAG, "addName: " + name + ":::::=>" + department);
+
+//      Add new record
+        ContentValues values = new ContentValues();
+        values.put(StudentProvider.NAME, name);
+        values.put(StudentProvider.GRADE, department);
+
+//        update uri
+//        Uri uri = getContentResolver().insert(StudentProvider.CONTENT_URI, values);
+//        Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_SHORT).show();
     }
 
     //Activity Life cycle
