@@ -5,6 +5,7 @@ package com.zero.project.helloworld;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -60,6 +61,21 @@ public class MainActivity extends AppCompatActivity {
 
         Uri uri = getContentResolver().insert(StudentProvider.CONTENT_URI, values);
         Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    public void getStudents(View view) {
+        Log.d(TAG, "getStudents: ");
+        String URL = "content://com.zero.provider.college/students";
+
+        Uri students = Uri.parse(URL);
+        Cursor cursor = managedQuery(students, null, null, null, StudentProvider.NAME);
+        if (cursor.moveToFirst()) {
+            do {
+                String record = cursor.getString(cursor.getColumnIndex(StudentProvider._ID)) + " , " + cursor.getString(cursor.getColumnIndex(StudentProvider.NAME)) + " , " + cursor.getString(cursor.getColumnIndex(StudentProvider.GRADE));
+                Log.d(TAG, record);
+            } while (cursor.moveToNext());
+        }
+        Toast.makeText(this, "See console for output", Toast.LENGTH_SHORT).show();
     }
 
     //Activity Life cycle

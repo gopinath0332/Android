@@ -8,6 +8,7 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -60,7 +61,27 @@ public class StudentProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        return null;
+        SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
+        queryBuilder.setTables(STUDENTS_TABLE_NAME);
+        switch (uriMatcher.match(uri)) {
+            case STUDENTS:
+                queryBuilder.setProjectionMap(STUDENTS_PROJECTION_MAP);
+                break;
+            case STUDENTS_ID:
+                queryBuilder.appendWhere(_ID + "=" + uri.getPathSegments().get(1));
+                break;
+            default:
+                throw new IllegalArgumentException("Unknown URI" + uri);
+        }
+        if (sortOrder == null || sortOrder == "") {
+            sortOrder = NAME;
+        }
+        Cursor cursor = queryBuilder.query(db, projection, selection, selectionArgs, null, null, sortOrder);
+        /**
+         * register to watch  a content uri for changes
+         */
+        cursor.setNotificationUri(getContext().getContentResolver(), uri);
+        return cursor;
     }
 
     @Nullable

@@ -69,11 +69,22 @@
         android:hint="@string/std_dept" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/std_dept"
         android:layout_centerHorizontal="true"
         android:onClick="addName"
         android:text="@string/add_btn" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:onClick="getStudents"
+        android:text="@string/get_btn" />
 
 </RelativeLayout>
