@@ -5,11 +5,13 @@ package com.zero.project.helloworld;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.zero.project.helloworld.provider.StudentProvider;
 import com.zero.project.helloworld.service.MyService;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startService(View view) {
         Log.d(TAG, "service started ");
+        startService(new Intent(getBaseContext(), MyService.class));
         startService(new Intent(getBaseContext(), MyService.class));
     }
 
@@ -55,10 +58,8 @@ public class MainActivity extends AppCompatActivity {
         values.put(StudentProvider.NAME, name);
         values.put(StudentProvider.GRADE, department);
 
-//        update uri
-//        TODO: update Uri mapping student provider.
-//        Uri uri = getContentResolver().insert(StudentProvider.CONTENT_URI, values);
-//        Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_SHORT).show();
+        Uri uri = getContentResolver().insert(StudentProvider.CONTENT_URI, values);
+        Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_SHORT).show();
     }
 
     //Activity Life cycle

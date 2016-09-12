@@ -14,12 +14,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver android:name=".receiver.MyReceiver">
             <intent-filter>
                 <action android:name="com.zero.project.CUSTOM_EVENT" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name=".provider.StudentProvider"
+            android:authorities="com.zero.provider.college" />
+
         <service android:name=".service.MyService" />
+
     </application>
 
 </manifest>
