@@ -8,5 +8,6 @@
     <string name="std_name">Student Name</string>
     <string name="add_btn">Add Name</string>
     <string name="get_btn">Get List</string>
+    <string name="intent_name">Intent FIlter Sample</string>
     <string name="std_dept">Student department</string>
 </resources>
