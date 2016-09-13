@@ -10,4 +10,6 @@
     <string name="get_btn">Get List</string>
     <string name="intent_name">Intent FIlter Sample</string>
     <string name="std_dept">Student department</string>
+    <string name="open_browser">Start Browser</string>
+    <string name="open_phone">Start Phone</string>
 </resources>

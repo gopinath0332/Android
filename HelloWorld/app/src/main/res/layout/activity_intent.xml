@@ -25,7 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:text="Start Browser"
+        android:onClick="openBrowser"
+        android:text="@string/open_browser"
         />
 
     <Button
@@ -34,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button3"
         android:layout_centerHorizontal="true"
-        android:text="Start Phone"/>
+        android:onClick="openPhone"
+        android:text="@string/open_phone"/>
 
 </RelativeLayout>
