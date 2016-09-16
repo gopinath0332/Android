@@ -20,7 +20,7 @@ public class IntentActivity extends AppCompatActivity {
     }
 
     public void openPhone(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:9944904257"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:0123456789"));
         startActivity(intent);
     }
 }
