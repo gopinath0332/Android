@@ -31,16 +31,6 @@ public class DisplayMessage extends Activity {
 
         TextView detailView = (TextView) this.findViewById(R.id.detail);
         detailView.setText(detail);
-//        TextView titleView = new TextView(this);
-//        titleView.setText(title);
-//        titleView.setTextSize(40);
-//
-//        TextView dialogue = new TextView(this);
-//        dialogue.setText(detail);
-//
-//        ViewGroup viewGroup = (ViewGroup) this.findViewById(R.id.display_message);
-//        viewGroup.addView(titleView);
-//        viewGroup.addView();
 
     }
 }
