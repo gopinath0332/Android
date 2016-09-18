@@ -18,9 +18,7 @@ public class FragmentLayout extends AppCompatActivity {
     private void showTitleFragment() {
         TitlesFragment titlesFragment = new TitlesFragment();
         android.app.FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//        fragmentTransaction.add(titlesFragment, "titles");
         fragmentTransaction.replace(R.id.content, titlesFragment);
-        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
     }
