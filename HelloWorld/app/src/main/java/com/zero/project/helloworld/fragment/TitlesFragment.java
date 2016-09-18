@@ -44,13 +44,11 @@ public class TitlesFragment extends ListFragment {
 
         if (dualPane) {
             this.getListView().setItemChecked(position, true);
-            TitlesFragment titlesFragment = (TitlesFragment) this.getFragmentManager().findFragmentById(R.id.titles);
 
             DetailsFragment fragment = DetailsFragment.newInstance(position);
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-            fragmentTransaction.remove(titlesFragment);
             fragmentTransaction.replace(R.id.content, fragment);
-            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         } else {
             Intent intent = new Intent();

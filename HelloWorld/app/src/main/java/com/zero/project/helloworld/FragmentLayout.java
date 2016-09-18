@@ -1,7 +1,10 @@
 package com.zero.project.helloworld;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.zero.project.helloworld.fragment.TitlesFragment;
 
 public class FragmentLayout extends AppCompatActivity {
 
@@ -9,5 +12,16 @@ public class FragmentLayout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_layout);
+        showTitleFragment();
+    }
+
+    private void showTitleFragment() {
+        TitlesFragment titlesFragment = new TitlesFragment();
+        android.app.FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//        fragmentTransaction.add(titlesFragment, "titles");
+        fragmentTransaction.replace(R.id.content, titlesFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.commit();
     }
 }

@@ -39,6 +39,7 @@ public class DetailsFragment extends Fragment {
         ScrollView scrollView = new ScrollView(getActivity());
         TextView textView = new TextView(getActivity());
         textView.setText(Shakespeare.DIALOGUE[index]);
+        textView.setTextSize(15);
         scrollView.addView(textView);
         return scrollView;
     }
