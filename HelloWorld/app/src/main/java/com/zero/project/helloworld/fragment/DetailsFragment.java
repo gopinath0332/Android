@@ -25,6 +25,11 @@ public class DetailsFragment extends Fragment {
         return fragment;
     }
 
+    @Override
+    public void setTargetFragment(Fragment fragment, int requestCode) {
+        super.setTargetFragment(fragment, requestCode);
+    }
+
     private int getIndex() {
         return getArguments().getInt(AppConstants.INDEX);
     }

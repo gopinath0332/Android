@@ -48,6 +48,8 @@ public class StudentProvider extends ContentProvider {
         Context context = getContext();
         boolean status = false;
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
+
+        System.out.println("Helo");
         /**
          * Create a writable database
          */
